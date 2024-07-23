@@ -1,16 +1,17 @@
-export const App = () => {
+import PropTypes from "prop-types";
+import css from "./UserBarBtn.module.css";
+
+export const UserBarBtn = () => {
   return (
-    <>
-      <Profile
-        username={user.username}
-        tag={user.tag}
-        //   location={user.location}
-        avatar={user.avatar}
-        //   stats={user.stats}
-      />
-      {/* <Statistics title="UPLOAD STATS" stats={data} />
-        <FriendsList friends={friends} />
-        <TransactionHistory items={transactions} /> */}
-    </>
+    <div className={css.description}>
+      <img src={avatar} alt="User avatar" className={css.avatar} />
+      <p className={css.name}>{name}</p>
+      <span></span>
+    </div>
   );
+};
+
+UserBarBtn.propTypes = {
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };

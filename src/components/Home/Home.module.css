@@ -1,0 +1,33 @@
+.container {
+  width: 575px;
+  height: 207px;
+  margin-top: 20px;
+  margin-left: 600px;
+}
+
+.topText {
+  color: #fafafa;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16.21px;
+  padding-bottom: 10px;
+}
+
+.title {
+  color: #fafafa;
+  padding-bottom: 15px;
+}
+
+.span {
+  color: #0ef387;
+}
+
+.bottomText {
+  width: 533px;
+  padding-bottom: 20px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18.53px;
+  color: #fafafa;
+  /* height: 57px; */
+}

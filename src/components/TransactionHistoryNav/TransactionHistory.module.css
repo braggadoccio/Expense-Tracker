@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 16px;
+}
+
+.button {
+  width: 125px;
+  height: 43px;
+  border-radius: 30px;
+  border: 1px solid;
+  background-color: transparent;
+  color: #fafafa;
+}
