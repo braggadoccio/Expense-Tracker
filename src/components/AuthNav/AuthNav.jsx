@@ -1,29 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import css from "./AuthNav.module.css";
+// import { useAuth } from "../../hooks/useAuth";
 
 export const AuthNav = () => {
+  // const isLoggedIn = useAuth();
   return (
-    <nav className={css.nav}>
+    <div className={css.container}>
       <button type="submit" className={css.button1}>
-        <NavLink
+        <Link
           to="/register"
-          className={css.link}
+          className={css.linkRegister}
           // className={({ isActive }) => (isActive ? css.linkActive : css.link)}
         >
           {/* <Button>Sign Up</Button> */}
           Sign Up
-        </NavLink>
+        </Link>
       </button>
       <button type="submit" className={css.button2}>
-        <NavLink
+        <Link
           to="/login"
-          className={css.link}
+          className={css.linkLogIn}
           // className={({ isActive }) => (isActive ? css.linkActive : css.link)}
         >
           {/* <Button>Sign In</Button> */}
           Sign In
-        </NavLink>
+        </Link>
       </button>
-    </nav>
+    </div>
   );
 };

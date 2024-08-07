@@ -1,0 +1,169 @@
+.form {
+  width: 332px;
+  height: 533px;
+  border-radius: 30px;
+  background-color: #171719;
+  padding-top: 40px;
+  padding-left: 40px;
+  margin-left: 16px;
+
+  @media screen and (min-width: 768px) {
+    width: 699px;
+    margin-left: 22px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: 566px;
+    height: 600px;
+    margin-left: 760px;
+    margin-top: -300px;
+  }
+}
+
+.radioContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-left: -15px;
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+    margin-left: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 20px;
+    margin-left: 0px;
+  }
+}
+
+.label {
+  color: #fafafa;
+  right: 30px;
+  font-size: 12px;
+  left: 50px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+
+/* .inputRadio {
+  /* background-color: #0ef387; */
+
+/* position: relative; */
+/*} */
+
+/* .inputRadio:checked {
+  background-color: #0ef387;
+} */
+.text {
+  color: #fafafa;
+  font-size: 12px;
+  padding-right: 8px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+}
+
+.dateWrap {
+  display: flex;
+}
+
+.dateContainer {
+  display: flex;
+  margin-left: -15px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    margin-left: 0px;
+  }
+}
+
+/* .dateIconWrapper {
+  width: 242px;
+  height: 42px;
+  border-radius: 12px;
+} */
+
+.labelDetails {
+  color: #fafafa;
+  margin-bottom: 10px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and(min-width: 1158px) {
+    font-size: 14px;
+  }
+}
+
+.containerInfo {
+  display: flex;
+  flex-direction: column;
+  margin-left: -18px;
+  margin-bottom: 20px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 60px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 0px;
+  }
+}
+
+.inputInfo {
+  width: 295px;
+  height: 35px;
+  border: 1px solid;
+  border-radius: 12px;
+  border-color: #fafafa;
+  background-color: transparent;
+  margin-top: 10px;
+  outline: none;
+  color: #fafafa;
+
+  @media screen and (min-width: 768px) {
+    width: 486px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    height: 48px;
+  }
+}
+
+.comment {
+  width: 295px;
+  height: 124px;
+  border: 1px solid;
+  border-radius: 12px;
+  border-color: #fafafa;
+  background-color: transparent;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  color: #fafafa;
+
+  @media screen and (min-width: 768px) {
+    width: 486px;
+  }
+}
+
+.button {
+  width: 124px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px soild;
+  border-color: #0ef387;
+  background-color: #0ef387;
+}

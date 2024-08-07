@@ -2,6 +2,7 @@ import { TransactionForm } from "../../components/TransactionForm/TransactionFor
 import { TransactionsChart } from "../../components/TransactionsChart/TransactionsChart";
 import { TransactionsTotalAmount } from "../../components/TransactionsTotalAmount/TransactionsTotalAmount";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { PrivatePageHeader } from "../../components/PrivatePageHeader/PrivatePageHeader";
 
 const MainTransactionPage = () => {
   return (
@@ -10,11 +11,11 @@ const MainTransactionPage = () => {
         <title>MainPage</title>
       </Helmet>
       <>
-        <div>
-          <TransactionsTotalAmount />
-          <TransactionsChart />
-        </div>
+        <PrivatePageHeader />
+
+        <TransactionsTotalAmount />
         <TransactionForm />
+        <TransactionsChart />
       </>
     </HelmetProvider>
   );

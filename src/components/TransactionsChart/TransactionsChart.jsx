@@ -1,7 +1,9 @@
+import css from "./TransactionsChart.module.css";
+
 export const TransactionsChart = () => {
   return (
-    <div>
-      <h3>Expense Categories</h3>
+    <div className={css.chartContainer}>
+      <h3 className={css.title}>Expense Categories</h3>
     </div>
   );
 };

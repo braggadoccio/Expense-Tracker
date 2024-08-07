@@ -1,17 +1,27 @@
+import css from "./TransactionsTotalAmount.module.css";
+import { GoArrowDownLeft } from "react-icons/go";
+import { MdOutlineArrowOutward } from "react-icons/md";
+
 export const TransactionsTotalAmount = () => {
   return (
-    <div>
-      <h1>Expense Log</h1>
-      <p>
+    <div className={css.container}>
+      <h2 className={css.title}>Expense Log</h2>
+      <p className={css.text}>
         Capture and organize every penny spent with ease! A clear view of your
-        financial habits at your fingertips.
+        finanial habits at your fingertips.
       </p>
-      <ul>
-        <li>
-          <span></span>Total Income<p></p>
+      <ul className={css.list}>
+        <li className={css.item}>
+          <span className={css.span}>
+            <MdOutlineArrowOutward />
+          </span>
+          Total Income<p></p>
         </li>
-        <li>
-          <span></span>Total Expense<p></p>
+        <li className={css.item}>
+          <span className={css.span}>
+            <GoArrowDownLeft />
+          </span>{" "}
+          Total Expense<p></p>
         </li>
       </ul>
     </div>

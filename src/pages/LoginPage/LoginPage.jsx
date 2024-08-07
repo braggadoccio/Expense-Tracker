@@ -7,11 +7,6 @@ const LoginPage = () => {
       <Helmet>
         <title>SignUp</title>
       </Helmet>
-      <h1>Sign In</h1>
-      <p>
-        Welcome back to effortless expense tracking! Your financial dashboard
-        awaits.
-      </p>
       <LoginForm />
     </HelmetProvider>
   );

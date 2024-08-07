@@ -1,4 +1,44 @@
 .container {
   background-color: #0c0d0d;
-  height: 695px;
+  height: 1500px;
+
+  /* width: 600px; */
+  @media screen and (min-width: 768px) {
+    /* justify-content: center;
+    text-align: center;
+    align-items: center; */
+    height: 1300px;
+  }
+  @media screen and (min-width: 1158px) {
+    height: 780px;
+  }
 }
+
+/* .wrapper {
+  @media screen and (min-width: 1158px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+    gap: 20px;
+  }
+} */
+/* .container2 {
+  background-image: url(../../images/Rectangle.jpg);
+  width: 611px;
+  height: 545px;
+  border-radius: 20px;
+  background-size: cover;
+  margin-top: 50px;
+
+  /* margin-left: 80px;
+  margin-bottom: 100px; */
+/* background-position: left;
+  background-repeat: no-repeat; 
+} */
+
+/* .container3 {
+  display: flex;
+  gap: 50px;
+  margin-left: 100px;
+} */

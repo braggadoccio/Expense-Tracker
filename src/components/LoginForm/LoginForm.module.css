@@ -1,0 +1,157 @@
+.container {
+  width: 533px;
+  margin-left: 25px;
+  /* height: 200px; */
+  @media screen and (min-width: 768px) {
+    margin-left: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-left: 25px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: 1158px;
+  }
+}
+
+.logoWrap {
+  margin-left: -25px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: -10px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    margin-left: 125px;
+  }
+}
+
+.mainWrapper {
+  display: flex;
+  margin-top: 70px;
+
+  @media screen and (min-width: 768px) {
+    margin-left: 150px;
+    margin-top: 100px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    gap: 60px;
+    margin-left: 70px;
+    margin-top: 40px;
+  }
+}
+
+.image {
+  display: none;
+
+  @media screen and (min-width: 1158px) {
+    display: contents;
+  }
+}
+
+.formWrapper {
+  margin-top: -80px;
+}
+
+.titleContainer {
+  margin-top: 85px;
+  width: 335px;
+}
+
+.title {
+  color: #fafafa;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 64.85px;
+  margin-bottom: 15px;
+
+  /* font-size: 56px;
+  margin-bottom: 20px;*/
+}
+
+.text {
+  color: #fafafa;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.21px;
+  margin-bottom: 25px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: 419px;
+    font-size: 16px;
+  }
+  /* font-size: 16px; 
+  margin-bottom: 30px;*/
+  /* line-height: 18.53px; */
+}
+
+.formContainer {
+  width: 399px;
+  /* margin-top: 40px; */
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  border-radius: 12px;
+  height: 42px;
+  border: 1px solid;
+  width: 320px;
+  background-color: transparent;
+  border-color: #fafafa;
+  color: #fafafa;
+  margin-bottom: 15px;
+  padding-left: 10px;
+  outline: none;
+
+  @media screen and (min-width: 768px) {
+    width: 360px;
+  }
+
+  @media screen and (min-width: 1158px) {
+    width: 365px;
+  }
+  /* border-radius: 5px;
+  height: 30px; */
+}
+
+.button {
+  width: 145px;
+  height: 47px;
+  border-radius: 40px;
+  background-color: #0ef387;
+  margin-top: 120px;
+  margin-bottom: 12px;
+
+  @media screen and (min-width: 1158px) {
+    margin-top: 140px;
+  }
+}
+
+.containerLink {
+  display: flex;
+  gap: 5px;
+}
+
+.linkText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fafafa;
+}
+
+.link {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #fafafa;
+}
