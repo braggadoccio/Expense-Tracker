@@ -3,7 +3,7 @@ import moment from "moment";
 
 const dateState = {
   date: moment().format("dd.MM.yyyy"),
-  // time: moment().format("00:00:00"),
+  time: moment().format("00:00:00"),
 };
 
 const dateSlice = createSlice({
@@ -13,9 +13,9 @@ const dateSlice = createSlice({
     setDate(state, action) {
       state.date = action.payload;
     },
-    // setTime(state, action) {
-    //   state.time = action.payload;
-    // },
+    setTime(state, action) {
+      state.time = action.payload;
+    },
   },
 });
 

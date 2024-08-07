@@ -4,11 +4,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import CalendarIcon from "../../images/calendar.svg";
 import { useDispatch } from "react-redux";
-import { setSelectedDate } from "../../redux/transactions/transactionsSlice";
+import { setDate } from "../../redux/date/dateSlice";
 import moment from "moment/moment";
 
 export const DateCalendar = () => {
-  const [setDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date());
   const dispatch = useDispatch();
   const handleChange = (date) => {
     const formattedDate = moment(date).format("DD.MM.YYYY");

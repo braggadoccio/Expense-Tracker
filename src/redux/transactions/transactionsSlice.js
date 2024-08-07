@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 // prettier-ignore
-import { setSelectedDate, setSelectedTime, fetchTransactions, addTransactions, deleteTransactions, editTransactions } from "./transactionsOperations";
-import moment from "moment";
+import { fetchTransactions, addTransactions, deleteTransactions, editTransactions } from "./transactionsOperations";
+// import moment from "moment";
 
 // const selectedDate = {
 //   date: moment().format("DD.MM.YYYY"),
@@ -11,8 +11,8 @@ import moment from "moment";
 const transactionsSlice = createSlice({
   name: "transactions",
   initialState: {
-    date: moment().format("DD.MM.YYYY"),
-    time: moment().format("00:00:00"),
+    // date: moment().format("DD.MM.YYYY"),
+    // time: moment().format("00:00:00"),
     transactionsList: [],
     isLoading: false,
     error: null,
@@ -38,35 +38,6 @@ const transactionsSlice = createSlice({
       .addCase(addTransactions.rejected, (state, action) => {
         state.isLoading = true;
         state.error = action.error.message;
-      })
-      .addCase(addTransactions.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.transactionsList.push(action.payload);
-      })
-      .addCase(setSelectedDate.pending, (state, action) => {
-        state.isLoading = true;
-      })
-      .addCase(setSelectedDate.rejected, (state, action) => {
-        state.isLoading = true;
-        state.error = action.error.message;
-      })
-      .addCase(setSelectedDate.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.transactionsList.push(action.payload);
-      })
-      .addCase(setSelectedTime.pending, (state, action) => {
-        state.isLoading = true;
-      })
-      .addCase(setSelectedTime.rejected, (state, action) => {
-        state.isLoading = true;
-        state.error = action.error.message;
-      })
-      .addCase(setSelectedTime.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.transactionsList.push(action.payload);
       })
       .addCase(deleteTransactions.pending, (state) => {
         state.isLoading = true;

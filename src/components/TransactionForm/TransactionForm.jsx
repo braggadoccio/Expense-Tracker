@@ -10,17 +10,17 @@ import { TimeSetter } from "../Time/TimeSetter";
 import { selectTransactions } from "../../redux/transactions/transactionsSelectors";
 import { addTransactions } from "../../redux/transactions/transactionsOperations";
 import { setDate } from "../../redux/date/dateSelectors";
-// import moment from "moment/moment";
+import moment from "moment/moment";
 // import styled from "styled-components";
 
 export const TransactionForm = () => {
   const dispatch = useDispatch();
 
   const transactions = useSelector(selectTransactions);
-  // const date = useSelector(setDate);
+  const date = useSelector(setSelectedDate);
 
   const [TransactionType, setTransactionType] = useState("");
-  const [date, setDate] = useState(new date());
+  const [setdate, setSelectedDate] = useState(new date());
   const [time, setTime] = useState("");
   const [category, setCategory] = useState("");
   const [sum, setSum] = useState("");
@@ -30,15 +30,15 @@ export const TransactionForm = () => {
     setTransactionType(e.target.value);
   };
 
-  // const handleDateChange = (date) => {
-  //   const formattedDate = moment(date).format("DD.MM.YYYY");
-  //   setSelectedDate(date);
-  //   dispatch(setStartDate(formattedDate));
-  //   setDate(e.target.value);
-  // };
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
+  const handleDateChange = (date) => {
+    const formattedDate = moment(date).format("DD.MM.YYYY");
+    setSelectedDate(date);
+    dispatch(setDate(formattedDate));
+    setSelectedDate(e.target.value);
   };
+  // const handleDateChange = (e) => {
+  //   setSelectedDate(e.target.value);
+  // };
 
   const handleTimeChange = (e) => {
     setTime(e.target.value);
