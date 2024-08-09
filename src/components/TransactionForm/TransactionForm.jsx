@@ -1,27 +1,34 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useState } from "react";
-// import DatePicker from "react-datepicker";
-import { DateCalendar } from "../DateCalendar/DateCalendar";
+import React, { useState, forwardRef } from "react";
 import css from "./TransactionForm.module.css";
 import "react-datepicker/dist/react-datepicker.module.css";
-// import "react-time-picker/dist/TimePicker.css";
-// import TimePicker from "react-time-picker";
-import { TimeSetter } from "../Time/TimeSetter";
-import { selectTransactions } from "../../redux/transactions/transactionsSelectors";
+import {
+  selectTransactions,
+  setDate,
+  setTime,
+} from "../../redux/transactions/transactionsSelectors";
 import { addTransactions } from "../../redux/transactions/transactionsOperations";
-import { setDate } from "../../redux/date/dateSelectors";
 import moment from "moment/moment";
+import TimePicker from "react-time-picker";
+import DatePicker from "react-datepicker";
+// prettier-ignore
+import {DatePickerWrapper, Icon, } from "./DateAndTime/DatePickerWrapper.styled";
+
+// import "react-time-picker/dist/TimePicker.css";
+// import { DateCalendar } from "../DateCalendar/DateCalendar";
+// import { TimeSetter } from "../Time/TimeSetter";
+// import { setDate } from "../../redux/date/dateSelectors";
 // import styled from "styled-components";
 
 export const TransactionForm = () => {
   const dispatch = useDispatch();
 
   const transactions = useSelector(selectTransactions);
-  const date = useSelector(setSelectedDate);
+  const date = useSelector(setDate);
 
   const [TransactionType, setTransactionType] = useState("");
-  const [setdate, setSelectedDate] = useState(new date());
-  const [time, setTime] = useState("");
+  const [selectedDate, setSelectedDate] = useState(new date());
+  const [selectedTime, setSelectedTime] = useState("00:00:00");
   const [category, setCategory] = useState("");
   const [sum, setSum] = useState("");
   const [comment, setComment] = useState("");
@@ -30,18 +37,30 @@ export const TransactionForm = () => {
     setTransactionType(e.target.value);
   };
 
-  const handleDateChange = (date) => {
+  const handleSelectedDate = (date) => {
     const formattedDate = moment(date).format("DD.MM.YYYY");
-    setSelectedDate(date);
+    selectedDate(date);
     dispatch(setDate(formattedDate));
     setSelectedDate(e.target.value);
   };
+
+  const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
+    <div>
+      <DatePickerWrapper onClick={onClick} ref={ref}>
+        {value}
+        <Icon src={CalendarIcon} alt="calendar icon" />
+      </DatePickerWrapper>
+    </div>
+  ));
   // const handleDateChange = (e) => {
   //   setSelectedDate(e.target.value);
   // };
 
-  const handleTimeChange = (e) => {
-    setTime(e.target.value);
+  const handleTimeChange = (time) => {
+    const formattedTime = moment(time).format("00:00:00");
+    selectedTime(time);
+    dispatch(setTime(formattedTime));
+    setSelectedTime(e.target.value);
   };
 
   const handleCategoryChange = (e) => {
@@ -59,11 +78,12 @@ export const TransactionForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     transactions = e.currentTarget;
+
     dispatch(
       addTransactions({
         TransactionType,
-        date,
-        time,
+        selectedDate,
+        selectedTime,
         category,
         sum,
         comment,
@@ -71,8 +91,8 @@ export const TransactionForm = () => {
     );
 
     setTransactionType("");
-    setDate("");
-    setTime("");
+    setSelectedDate("");
+    setSelectedTime("");
     setCategory("");
     setSum("");
     setComment("");
@@ -122,20 +142,22 @@ export const TransactionForm = () => {
         <div className={css.dateContainer}>
           <p className={css.text}>Date</p>
 
-          <DateCalendar onChange={handleDateChange} />
-          {/* <Wrapper>
-          <DatePicker
-            selected={startDate}
-            onChange={handleDateChange}
-            // onChange={(date) => setStartDate(date)}
-            dateFormat="dd.MM.yyyy"
-            // customInput={<ExampleCustomInput />}
-          />
-        </Wrapper> */}
+          {/* <DateCalendar onSelect={handleSelectedDate} /> */}
+          <div>
+            <DatePicker
+              selected={selectedDate}
+              onChange={handleSelectedDate}
+              dateFormat="dd.MM.yyyy"
+              customInput={<ExampleCustomInput />}
+              // maxDate={new Date()}
+            />
+          </div>
         </div>
-        <p className={css.text}>Time</p>
-        {/* <TimePicker onChange={handleTimeChange} /> */}
-        <TimeSetter onChange={handleTimeChange} />
+        <div>
+          <p className={css.text}>Time</p>
+          <TimePicker onChange={handleTimeChange} />
+        </div>
+        {/* <TimeSetter onChange={handleTimeChange} /> */}
       </div>
       <div className={css.containerInfo}>
         <label htmlFor="" className={css.labelDetails}>

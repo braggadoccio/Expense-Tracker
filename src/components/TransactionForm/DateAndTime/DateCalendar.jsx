@@ -8,11 +8,11 @@ import { setDate } from "../../redux/date/dateSlice";
 import moment from "moment/moment";
 
 export const DateCalendar = () => {
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
   const handleChange = (date) => {
     const formattedDate = moment(date).format("DD.MM.YYYY");
-    setSelectedDate(date);
+    setStartDate(date);
     dispatch(setDate(formattedDate));
   };
 
@@ -27,7 +27,7 @@ export const DateCalendar = () => {
   return (
     <div>
       <DatePicker
-        selected={selectedDate}
+        selected={startDate}
         onChange={(date) => handleChange(date)}
         dateFormat="dd.MM.yyyy"
         customInput={<ExampleCustomInput />}

@@ -60,25 +60,25 @@ export const editTransactions = createAsyncThunk(
   }
 );
 
-export const setSelectedDate = createAsyncThunk(
-  "transactions/setSelectedDate",
-  async (date, id, thunkAPI) => {
-    try {
-      const response = await axios.patch(`/transactions/${date}/${id}`);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
-export const setSelectedTime = createAsyncThunk(
-  "transactions/setSelectedTime",
-  async (time, id, thunkAPI) => {
-    try {
-      const response = await axios.patch(`/transactions/${time}/${id}`);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const setSelectedDate = createAsyncThunk(
+//   "transactions/setSelectedDate",
+//   async (date, id, thunkAPI) => {
+//     try {
+//       const response = await axios.patch(`/transactions/${date}/${id}`);
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
+// export const setSelectedTime = createAsyncThunk(
+//   "transactions/setSelectedTime",
+//   async (time, id, thunkAPI) => {
+//     try {
+//       const response = await axios.patch(`/transactions/${time}/${id}`);
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
